@@ -1108,39 +1108,67 @@
 
   /* ============ RESPONSIVE ============ */
   @media (max-width: 900px) {
+
+    /* HERO */
     .hero { min-height: 620px; max-height: none; }
     .hero-editorial { padding: 90px 20px 120px; }
     .hero-zone-top { gap: 14px; }
     .hero-zone-faces { min-height: 100px; max-height: 180px; }
     .hero-zone-bottom { gap: 12px; }
     .hero-top-badge { font-size: 0.68rem; padding: 6px 14px; }
+    .hero-editorial-title { white-space: normal; font-size: clamp(2rem, 9vw, 3rem); }
     .hero-editorial-sub { font-size: 1rem; }
     .hero-editorial-ctas { gap: 10px; }
     .hero-editorial-ctas .btn { padding: 13px 22px; font-size: 0.88rem; flex: 1 1 auto; min-width: 0; justify-content: center; }
     .hero-rating { font-size: 0.8rem; padding: 8px 14px; }
 
-    .floating-dishes { margin-top: -90px; padding: 0 16px 60px; }
-    .floating-dishes-grid { gap: 10px; }
-    .floating-dish { aspect-ratio: 3/4; }
-    .floating-dish:nth-child(2) { margin-top: 18px; }
+    /* BANDA DE PLATOS — apilada en móvil */
+    .floating-dishes { margin-top: -60px; padding: 0 16px 60px; }
+    .floating-dishes-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+    .floating-dish { aspect-ratio: 4/3; }
+    .floating-dish-hero { transform: scale(1); }
+    .floating-dish-hero:hover { transform: translateY(-6px); }
+    .floating-dish-side { margin-top: 0; }
     .floating-dish-img { border-width: 3px; border-radius: 14px; }
-    .floating-dish-badge { font-size: 0.68rem; padding: 7px 12px; bottom: -10px; }
+    .floating-dish-badge { font-size: 0.75rem; padding: 8px 14px; bottom: -12px; }
 
-    .concept-grid,
-    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    /* STATS */
     .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
-    .order-platforms { grid-template-columns: 1fr; }
-    .concept-visual { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    .modular-label { font-size: 1.3rem; }
-    .modular-sub { font-size: 0.72rem; }
-    .modular-content { padding: 12px 14px; }
-    .pillars-horizontal { grid-template-columns: 1fr; gap: 14px; margin-top: 40px; }
-    .pillars-horizontal .pillar { padding: 22px 20px; }
-    .pillars-horizontal .pillar-num { font-size: 1.6rem; }
-    section { padding: 70px 24px; }
+
+    /* CONCEPTO — La Firma Brunchy */
+    .concept-grid { grid-template-columns: 1fr; gap: 40px; }
+    .concept-visual {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      max-width: 100%;
+    }
+    .modular-card { aspect-ratio: 3/4; }
+    .modular-label { font-size: 1.1rem; }
+    .modular-sub { font-size: 0.68rem; }
+    .modular-content { padding: 10px 12px; }
+
+    /* PILARES — Una columna en móvil */
+    .pillars-horizontal {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 36px;
+    }
+    .pillars-horizontal .pillar { padding: 20px 18px; }
+    .pillars-horizontal .pillar-num { font-size: 1.5rem; }
     .pillar-num { font-size: 1.5rem; width: 42px; }
 
-    /* Mosaico de ubicación en móvil */
+    /* DELIVERY — Una columna */
+    .order-platforms { grid-template-columns: 1fr; gap: 16px; }
+
+    /* CONTACTO */
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+
+    /* MOSAICO DE UBICACIÓN */
     .location-mosaic { min-height: auto; }
     .mosaic-grid {
       grid-template-columns: 1fr 1fr;
@@ -1156,6 +1184,19 @@
       grid-row: 3;
       padding: 22px 20px;
     }
+    .mosaic-address { font-size: 1.2rem; }
+
+    /* GENERAL */
+    section { padding: 60px 20px; }
+  }
+
+  /* ============ RESPONSIVE EXTRA PEQUEÑO (iPhone SE, etc) ============ */
+  @media (max-width: 480px) {
+    .floating-dishes-grid { max-width: 320px; }
+    .concept-visual { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .modular-label { font-size: 0.95rem; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .stat-num { font-size: 2.2rem; }
   }
 
   /* Animaciones de entrada */
